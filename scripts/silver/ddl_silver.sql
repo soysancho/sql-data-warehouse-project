@@ -6,16 +6,10 @@ Script Purpose:
     This script creates tables in the 'silver' schema, dropping existing tables 
     if they already exist.
 	  Run this script to re-define the DDL structure of 'bronze' Tables
-Additional information:
-    This script is similar to ddl_bronze.sql with only addition
-    dwh_create_date column for each table in silver layer, so we know
-    when the data was loaded to a silver layer table.
 ===============================================================================
 */
 
 DROP TABLE IF EXISTS silver.crm_cust_info;
-GO
-
 CREATE TABLE silver.crm_cust_info (
     cst_id             INT,
     cst_key            NVARCHAR(50),
@@ -28,9 +22,8 @@ CREATE TABLE silver.crm_cust_info (
 );
 GO
 
-DROP TABLE IF EXISTS silver.crm_prd_info;
-GO
 
+DROP TABLE IF EXISTS silver.crm_prd_info;
 CREATE TABLE silver.crm_prd_info (
     prd_id          INT,
     cat_id          NVARCHAR(50),
@@ -44,9 +37,8 @@ CREATE TABLE silver.crm_prd_info (
 );
 GO
 
-DROP TABLE IF EXISTS silver.crm_sales_details;
-GO
 
+DROP TABLE IF EXISTS silver.crm_sales_details;
 CREATE TABLE silver.crm_sales_details (
     sls_ord_num     NVARCHAR(50),
     sls_prd_key     NVARCHAR(50),
@@ -61,9 +53,8 @@ CREATE TABLE silver.crm_sales_details (
 );
 GO
 
-DROP TABLE IF EXISTS silver.erp_loc_a101;
-GO
 
+DROP TABLE IF EXISTS silver.erp_loc_a101;
 CREATE TABLE silver.erp_loc_a101 (
     cid             NVARCHAR(50),
     cntry           NVARCHAR(50),
@@ -71,9 +62,8 @@ CREATE TABLE silver.erp_loc_a101 (
 );
 GO
 
-DROP TABLE IF EXISTS silver.erp_cust_az12;
-GO
 
+DROP TABLE IF EXISTS silver.erp_cust_az12;
 CREATE TABLE silver.erp_cust_az12 (
     cid             NVARCHAR(50),
     bdate           DATE,
@@ -82,9 +72,8 @@ CREATE TABLE silver.erp_cust_az12 (
 );
 GO
 
-DROP TABLE IF EXISTS silver.erp_px_cat_g1v2;
-GO
 
+DROP TABLE IF EXISTS silver.erp_px_cat_g1v2;
 CREATE TABLE silver.erp_px_cat_g1v2 (
     id              NVARCHAR(50),
     cat             NVARCHAR(50),
